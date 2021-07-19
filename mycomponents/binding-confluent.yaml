@@ -1,0 +1,28 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: myevent
+  namespace: default
+spec:
+  type: bindings.kafka
+  version: v1
+  metadata:
+    - name: consumerGroup
+      value: group1
+      # For inputs
+    - name: topics
+      value: A
+      # For outputs
+    - name: publishTopic
+      value: A
+      # Kafka broker connection setting
+    - name: brokers
+      value: "pkc-43n10.us-central1.gcp.confluent.cloud:9092"
+    - name: authRequired
+      value: "true"
+    - name: saslUsername
+      value: "CPAFIWWN2X2NKADY"
+    - name: saslPassword
+      value: "oBMrgadj+tSBqmK5jcBdYWgapsy/6xFFMlg9uPi3htSC1XPZXYWrnMyiR1t7uMSw"
+    - name: maxMessageBytes
+      value: 2048
