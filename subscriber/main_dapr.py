@@ -8,7 +8,7 @@ app = App()
 #CORS(app)
 
 
-@app.subscribe(pubsub_name='pubsub', topic='A')
+@app.subscribe(pubsub_name='pubsub', topic='B')
 def topic_a(event: v1.Event) -> None:
     data = json.loads(event.Data())
     print(f'Received: id={data["id"]}, message="{data ["message"]}"'

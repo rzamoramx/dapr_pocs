@@ -26,7 +26,7 @@ def new_order():
         "value": request.json['data']
     }]
 
-    print(f'DDDDDDD: {json.dumps(state)}')  #
+    print(f'DDDDDDD: {json.dumps(state)}')
 
     response = requests.post(STATEURL, data=json.dumps(state))
     print(f'XXXXXX {response.status_code}')
