@@ -12,7 +12,7 @@ def publisher():
             n += 1
             req_data = {
                 'id': n,
-                'message': 'hello world'
+                'message': 'hello world from Dapr and Confluent'
             }
 
             print(f'Sending message id: {req_data["id"]}, message "{req_data["message"]}"', flush=True)

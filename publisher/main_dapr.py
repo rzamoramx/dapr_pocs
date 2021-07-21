@@ -10,7 +10,7 @@ with DaprClient() as daprc:
         msg_id += 1
         req_data = {
             'id': msg_id,
-            'message': 'Hola pubsub usando grpc'
+            'message': 'Hola pubsub (kafka local) usando grpc'
         }
 
         # Create a typed message with content type and body

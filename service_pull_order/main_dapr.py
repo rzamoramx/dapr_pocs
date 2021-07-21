@@ -6,12 +6,13 @@ import time
 from dapr.clients import DaprClient
 
 with DaprClient() as daprc:
+    count = 1
+
     req_data = {
-        'id': 1,
+        'id': count,
         'message': 'hello world from Dapr'
     }
 
-    count = 1
     while True:
         resp = daprc.invoke_method(
             'serviceorder',

@@ -4,17 +4,18 @@ from dapr.clients import DaprClient
 
 from dapr.ext.grpc import App, InvokeMethodRequest, InvokeMethodResponse
 
-STORE_NAME = 'statestore'
+STORE_NAME = 'statestoref'
 app = App()
 
 
 @app.method(name='neworder')
 def new_order(request: InvokeMethodRequest) -> InvokeMethodResponse:
+    print("*********INCOMING REQUEST**********")
     print(request.metadata, flush=True)
     print(request.text(), flush=True)
 
     data = json.loads(request.text())
-    save_state('order', data["message"])
+    save_state(f'order{data["id"]}', data["message"])
     return InvokeMethodResponse(b'INVOKE_RECEIVED', "text/plain; charset=UTF-8")
 
 
